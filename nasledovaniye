@@ -45,7 +45,7 @@ management::management(char *person, char *position, char *car, char *ingeneer, 
 
 { 
 strcpy(management::degree, degree) ; //êîï³þâàííÿ äàíèõ ïðî êîìïåòåíö³þ
-management::annual_bonus = bonus ; //êîï³þâàííÿ äàíèõ íàäáàâêè
+management::bonus = bonus ; //êîï³þâàííÿ äàíèõ íàäáàâêè
 management::stock = stock; //êîï³þâàííÿ äàíèõ ïðî îçàîùàäæåííÿ
 } 
 
@@ -54,7 +54,7 @@ void management::show_management(void)
 { 
 show_employee(); 
 cout « "âóïêóó: " « âóïêóó « endl; 
-cout « "Bonus: $" « annual_bonus « endl; 
+cout « "Bonus: $" « bonus « endl; 
 cout « "Stock: " « stock« endl; 
 } 
 
