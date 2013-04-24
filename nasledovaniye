@@ -1,1 +1,69 @@
-ery
+#include <iostream.h> 
+#include <string.h> 
+
+class employee 
+
+{ 
+public: 
+employee(char *, char *, char*); 
+void show_employee(void); 
+private: 
+char person [64]; //âèä³ëåííÿ ïàìÿò³ äëÿ ïåðñîíè
+char position[64]; //ðîáî÷èé
+char ingeneer[64]; //³íæåíåð
+}; 
+
+employee::employee(char *person, char *position,char *ingeneer) 
+
+{ 
+strcpy(employee::person, person); //êîï³þâàííÿ óñüîãî ðÿäêà ïåðñîíè
+strcpy(employee::position, position); //êîï³þâàííÿ óñüîãî ðÿäêà ðîáî÷îãî
+strcpy(employee::ingeneer, ingeneer);//êîï³þâàííÿ óñüîãî ðÿäêà ³íæåíåðà
+} 
+
+void employee::show_employee(void) 
+
+{ 
+cout « "Name: " « name « endl; //ââåäåííÿ ³ìåí³ ïåðñîíè
+cout « "Position: " « position « endl; //ââåäåííÿ ïîçèö³¿ ðîáî÷îãî
+cout « "Ingeneer: $" « ingeneer « endl; //ââåäåííÿ îáîâÿçê³â ³íæèíåðà
+} 
+
+class management : public employee 
+
+{ 
+public: 
+management(char *, char *, char *, float, float, int); 
+void show_management(void); 
+private: 
+float annual_bonus; //äàíí³ ïðî íàäáàâêè
+char degree[64]; //äàíí³ ïðî ìàøèíó ñëóæáîâöÿ
+int stock; //çàîùàäæåííÿ ðîáî÷îãî
+}; 
+
+management::management(char *person, char *position, char *car, char *ingeneer, float bonus, int stock) : employee(name, position, ingeneer) 
+
+{ 
+strcpy(management::degree, degree) ; //êîï³þâàííÿ äàíèõ ïðî êîìïåòåíö³þ
+management::annual_bonus = bonus ; //êîï³þâàííÿ äàíèõ íàäáàâêè
+management::stock = stock; //êîï³þâàííÿ äàíèõ ïðî îçàîùàäæåííÿ
+} 
+
+void management::show_management(void) 
+
+{ 
+show_employee(); 
+cout « "âóïêóó: " « âóïêóó « endl; 
+cout « "Bonus: $" « annual_bonus « endl; 
+cout « "Stock: " « stock« endl; 
+} 
+
+void main(void) 
+
+{ 
+employee position("Andrey Petrov", "ingeneer(bridge department)", 35000); 
+management superior("Valeriy Abdulovich", "ingeneering department", "master", 50000.0, 5000, 1000); 
+position.show_employee() ; 
+superior.show_management(); 
+}
+
