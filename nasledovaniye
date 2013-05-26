@@ -63,10 +63,21 @@ taxes(char*, char*, char*,float, int);
 void show_taxes(void);
 int stock;
 };
-taxes::taxes(char* person, char* position, char* car, float bonus, int stock) : employee(name, position,bonus)
+taxes::taxes(char* person, char* position, char* car, float bonus, int stock) : employee(name, position,bonus)\\2й дочірній клас
 {stecpy(taxes::position, position);
 taxes::bonus=bonus;
 taxes::stock=stock;
+}
+class family:: public employee
+{public:
+family(char*, char*, int);
+void show_family(void);
+int members;
+};
+family::family(char* person, char* car, int members) : employee(name, car, bonus)\\3й дочірній клас
+{strcpy (familie:: name, name);
+familie:: car,car;
+familie:: members, members;
 }
 
 void main(void) 
