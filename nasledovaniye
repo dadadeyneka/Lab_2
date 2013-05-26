@@ -2,7 +2,7 @@
 #include <string.h> 
 
 class employee 
-
+employee::employee()\\конструктор по замовчанню
 { 
 public: 
 employee(char *, char *, char*); 
