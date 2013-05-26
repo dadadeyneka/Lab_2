@@ -57,6 +57,17 @@ cout « "Name " « name « endl;
 cout « "Bonus: $" « bonus « endl; 
 cout « "Stock: " « stock« endl; 
 } 
+class taxes:: public employee
+{public:
+taxes(char*, char*, char*,float, int);
+void show_taxes(void);
+int stock;
+};
+taxes::taxes(char* person, char* position, char* car, float bonus, int stock) : employee(name, position,bonus)
+{stecpy(taxes::position, position);
+taxes::bonus=bonus;
+taxes::stock=stock;
+}
 
 void main(void) 
 
