@@ -8,25 +8,25 @@ public:
 employee(char *, char *, char*); 
 void show_employee(void); 
 private: 
-char person [64]; //âèä³ëåííÿ ïàìÿò³ äëÿ ïåðñîíè
-char position[64]; //ðîáî÷èé
-char ingeneer[64]; //³íæåíåð
+char person [64]; //виділення памяті для особи
+char position[64]; //для посади
+char ingeneer[64]; //для стажу
 }; 
 
-employee::employee(char *person, char *position,char *ingeneer) 
+employee::employee(char *person, char *position,char *ingeneer)\\конструктор з параметрами 
 
 { 
-strcpy(employee::person, person); //êîï³þâàííÿ óñüîãî ðÿäêà ïåðñîíè
-strcpy(employee::position, position); //êîï³þâàííÿ óñüîãî ðÿäêà ðîáî÷îãî
-strcpy(employee::ingeneer, ingeneer);//êîï³þâàííÿ óñüîãî ðÿäêà ³íæåíåðà
+strcpy(employee::person, person); 
+strcpy(employee::position, position); 
+strcpy(employee::ingeneer, ingeneer);
 } 
 
 void employee::show_employee(void) 
 
 { 
-cout « "Name: " « name « endl; //ââåäåííÿ ³ìåí³ ïåðñîíè
-cout « "Position: " « position « endl; //ââåäåííÿ ïîçèö³¿ ðîáî÷îãî
-cout « "Ingeneer: $" « ingeneer « endl; //ââåäåííÿ îáîâÿçê³â ³íæèíåðà
+cout « "Name: " « name « endl; //введення імені
+cout « "Position: " « position « endl; //посади
+cout « "Ingeneer: $" « ingeneer « endl; //стажу
 } 
 
 class management : public employee 
@@ -36,24 +36,24 @@ public:
 management(char *, char *, char *, float, float, int); 
 void show_management(void); 
 private: 
-float annual_bonus; //äàíí³ ïðî íàäáàâêè
-char degree[64]; //äàíí³ ïðî ìàøèíó ñëóæáîâöÿ
-int stock; //çàîùàäæåííÿ ðîáî÷îãî
+float annual_bonus; //виведення отримануваного бонусу
+char degree[64]; 
+int stock; 
 }; 
 
 management::management(char *person, char *position, char *car, char *ingeneer, float bonus, int stock) : employee(name, position, ingeneer) 
 
 { 
-strcpy(management::degree, degree) ; //êîï³þâàííÿ äàíèõ ïðî êîìïåòåíö³þ
-management::bonus = bonus ; //êîï³þâàííÿ äàíèõ íàäáàâêè
-management::stock = stock; //êîï³þâàííÿ äàíèõ ïðî îçàîùàäæåííÿ
+strcpy(management::degree, degree) ; //введення освіти працівника
+management::bonus = bonus ; //введення отримуваного бонусу
+management::stock = stock; //сплачених податків
 } 
 
 void management::show_management(void) 
 
 { 
 show_employee(); 
-cout « "âóïêóó: " « âóïêóó « endl; 
+cout « "Name " « name « endl; 
 cout « "Bonus: $" « bonus « endl; 
 cout « "Stock: " « stock« endl; 
 } 
